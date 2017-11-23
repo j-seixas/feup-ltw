@@ -5,9 +5,7 @@
   $username = trim(strip_tags($_POST['username']));
   $password = $_POST['password'];  
 
-  if (verifyUser($username, $password)) {
-    $_SESSION['username'] = $username;
-  }
+  createUser($username, $password);
   
-  header('Location: ' . $_SERVER['HTTP_REFERER']);  
+  header('Location: list_categories.php');  
 ?>
