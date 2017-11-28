@@ -1,16 +1,17 @@
 <?php
 
-  function getAllProducts() {
+  function getAllLists($id) {
     global $dbh;
     $stmt = $dbh->prepare("SELECT *
-                           FROM product JOIN
-                                category USING (cat_id)
-                           ORDER BY pro_id DESC");
-    $stmt->execute();
-    return $stmt->fetchAll();
+                           FROM lists JOIN
+                                users USING (idUser)
+                           WHERE idUser = ?
+                           ORDER BY lists.id DESC");
+    $stmt->execute(array($id));
+    return $stmt->fetch();
   }
 
-  function getProductById($id) {
+  function getListById($id) {
     global $dbh;
     $stmt = $dbh->prepare("SELECT *
                            FROM product JOIN

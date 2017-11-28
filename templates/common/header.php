@@ -2,7 +2,7 @@
 <html>
 
   <head>
-    <title>Ultra Shop</title>
+    <title>Can't Forget</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Cherry+Swash" rel="stylesheet">
@@ -15,8 +15,8 @@
     <header>
       <div id="info">
         <img src="images/site/logo.svg">
-        <h1><a href="index.php">Ultra Shop</a></h1>
-        <a href="list_cart.php"><i class="fa fa-shopping-cart"></i>(<?=getCartSize()?>)</a>
+        <h1><a href="index.php">Can't Forget</a></h1>
+    <!--    <a href="list_cart.php"><i class="fa fa-shopping-cart"></i>(<?=getCartSize()?>)</a> -->
       </div>
       <?php include_once('templates/common/user.php'); ?>
     </header>

@@ -1,3 +1,4 @@
+PRAGMA foreign_keys = ON;
 CREATE TABLE users (
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
 	userName VARCHAR,
@@ -10,8 +11,17 @@ CREATE TABLE users (
 
 CREATE TABLE lists (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-	idUser INT,
-	title VARCHAR
+	idUser INTEGER,
+	title VARCHAR,
+	FOREIGN KEY (idUser) REFERENCES users(id)
+);
+
+CREATE TABLE items (
+	idItem INTEGER PRIMARY KEY AUTOINCREMENT,
+	idList INTEGER,
+	complete BOOLEAN,
+	description VARCHAR,
+	FOREIGN KEY (idList) REFERENCES lists(id)
 );
 
 INSERT INTO users VALUES (NULL, 'Jenine', 'Jenine MacParland', 'jmacparland0@reddit.com', '18/04/1990', 'Female', 'FpVsl1oLRQ');
