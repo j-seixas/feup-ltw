@@ -7,18 +7,19 @@
   </head>
   <body>
     <header>
-      <h1><a href="index.html">Can't Forget</a></h1>
+      <h1><a href="index.php">Can't Forget</a></h1>
     </header>
-    <div id="login">
-      <form action="signin.php" method="post">
-        <input type="text" placeholder="username" name="username">
-        <input type="password" placeholder="password" name="password">
+  <!--  <div id="login">
+      <form action="signIn.php" method="post">
+        <input type="text" placeholder="Username" name="username">
+        <input type="password" placeholder="Password" name="password">
         <div>
           <input type="submit" value="Sign In">
-          <a href="signup.php">Sign Up</a>
+          <a href="signUp.php">Sign Up</a>
         </div>
       </form>
-    </div>
+    </div> -->
+    <?php include_once('login.php') ?>
     <section id="images">
     </section>
     <footer>
