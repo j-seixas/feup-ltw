@@ -11,7 +11,7 @@
     </header>
     <div id="signup">
 
-        <form name="registerForm" method="post">
+        <form name="registerForm" action="index.php" method="post" onSubmit="return submitList()">
           <input type="text" placeholder="Username" name="userName" required>
           <input type="text" placeholder="Email" name="email" required>
           <input type="text" placeholder="Name" name="name" required>
@@ -29,21 +29,17 @@
           </div>
         </form>
         <script>
-        function submitList(event){
-          event.preventDefault();
-          alert("a");
+        
+        function submitList(){
           console.log("submiting");
-          if(document.forms["registerForm"]["password"].value == document.forms["registerForm"]["cpassword"])
+          if(document.forms["registerForm"]["password"].value == document.forms["registerForm"]["cpassword"].value )
           console.log("here");
           else {
             console.log("dif");
+            return false;
           }
+          return true;
         }
-        let form = document.getElementById("register");
-        console.log("here");
-        form.addEventListener("submit", function(event){event.preventDefault()});
-        form.addEventListener("onSubmit", submitList);
-        console.log("there");
         </script>
     </div>
 
