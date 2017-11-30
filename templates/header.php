@@ -19,7 +19,10 @@
         </div>
       </form>
     </div> -->
-    <?php include_once('login.php') ?>
+    <?php include_once('login.php');
+    $var = sha1(12345);
+    echo $var; ?>
+
     <section id="images">
     </section>
     <footer>

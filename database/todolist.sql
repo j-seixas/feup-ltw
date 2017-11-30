@@ -24,6 +24,7 @@ CREATE TABLE items (
 	FOREIGN KEY (idList) REFERENCES lists(id)
 );
 
+INSERT INTO users VALUES (NULL, 'qwerty', 'Who Cares', '123@reddit.com', '18/04/1990', 'Female', '8cb2237d0679ca88db6464eac60da96345513964');
 INSERT INTO users VALUES (NULL, 'Jenine', 'Jenine MacParland', 'jmacparland0@reddit.com', '18/04/1990', 'Female', 'FpVsl1oLRQ');
 INSERT INTO users VALUES (NULL, 'Ross', 'Ross Leney', 'rleney1@yelp.com', '05/09/1956', 'Male', 'Y2qRCL');
 INSERT INTO users VALUES (NULL, 'Filmore', 'Filmore Kinnie', 'fkinnie2@networkadvertising.org', '26/06/1978', 'Male', 'XbAma6VD');
