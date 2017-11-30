@@ -1,4 +1,7 @@
-PRAGMA foreign_keys = ON;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS lists;
+DROP TABLE IF EXISTS items;
+
 CREATE TABLE users (
 	userName VARCHAR PRIMARY KEY,
 	Name VARCHAR,
@@ -9,18 +12,16 @@ CREATE TABLE users (
 );
 
 CREATE TABLE lists (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  idList INTEGER PRIMARY KEY AUTOINCREMENT,
 	userName VARCHAR,
-	title VARCHAR,
-	FOREIGN KEY (userName) REFERENCES users(userName)
+	title VARCHAR
 );
 
 CREATE TABLE items (
 	idItem INTEGER PRIMARY KEY AUTOINCREMENT,
 	idList INTEGER,
 	complete BOOLEAN,
-	description VARCHAR,
-	FOREIGN KEY (idList) REFERENCES lists(id)
+	description VARCHAR
 );
 
 INSERT INTO users VALUES ('qwerty', 'Who Cares', '123@reddit.com', '18/04/1990', 'Female', '8cb2237d0679ca88db6464eac60da96345513964');

@@ -1,9 +1,3 @@
-<script>
-  let form = document.getElementById("register");
-  form.addEventListener("submit", function(){
-    
-  })
-</script>
 <!DOCTYPE html>
 <html>
   <head>
@@ -17,14 +11,14 @@
     </header>
     <div id="signup">
 
-        <form action="signIn.php" method="post">
-          <input type="text" placeholder="Username" name="userName">
-          <input type="text" placeholder="Full Name" name="name">
-          <input type="password" placeholder="Password" name="password">
-          <input type="password" placeholder="Confirm Password" name="cpassword">
-          <input type="text" placeholder="Email" name="email">
-          <input type="date" name="date">
-          <input type="radio" name="gender" id="genderF" value="Female">
+        <form name="registerForm" method="post">
+          <input type="text" placeholder="Username" name="userName" required>
+          <input type="text" placeholder="Email" name="email" required>
+          <input type="text" placeholder="Name" name="name" required>
+          <input type="password" placeholder="Password" name="password" required>
+          <input type="password" placeholder="Confirm Password" name="cpassword" required>
+          <input type="date" name="date" required>
+          <input type="radio" name="gender" id="genderF" value="Female" required>
           <label for="genderF">Female</label>
           <input type="radio" name="gender" id="genderM" value="Male">
           <label for="genderF">Male</label>
@@ -34,6 +28,23 @@
             <a href="signUp.php">Sign Up</a>
           </div>
         </form>
+        <script>
+        function submitList(event){
+          event.preventDefault();
+          alert("a");
+          console.log("submiting");
+          if(document.forms["registerForm"]["password"].value == document.forms["registerForm"]["cpassword"])
+          console.log("here");
+          else {
+            console.log("dif");
+          }
+        }
+        let form = document.getElementById("register");
+        console.log("here");
+        form.addEventListener("submit", function(event){event.preventDefault()});
+        form.addEventListener("onSubmit", submitList);
+        console.log("there");
+        </script>
     </div>
 
 
