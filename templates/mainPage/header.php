@@ -3,7 +3,7 @@
   <head>
     <title>Can't Forget</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mainStyle.css">
   </head>
   <body>
     <header>

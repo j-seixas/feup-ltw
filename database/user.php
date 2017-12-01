@@ -7,4 +7,11 @@
     return $stmt->fetch() !== false;
   }
 
+  function dontExist($username){
+    global $dbh;
+    $stmt = $dbh->prepare('SELECT * FROM users WHERE userName = ?');
+    $stmt->execute(array($username));
+    return $stmt->fetch() == false;
+  }
+
 ?>
