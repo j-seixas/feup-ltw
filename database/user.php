@@ -14,4 +14,11 @@
     return $stmt->fetch() == false;
   }
 
+  function registUser($name, $username, $date, $gender, $password){
+    global $dbh;
+    $stmt = $dbh->prepare('INSERT INTO users VALUES (?, ?, ?, ?, ?)');
+    $stmt->execute(array($name, $username, $date, $gender, sha1($password)));
+
+  }
+
 ?>

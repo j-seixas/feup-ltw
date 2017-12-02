@@ -1,8 +1,7 @@
 <div id="signup">
 
-    <form name="registerForm" action="index.php" method="post" onSubmit="return submitList()">
-      <input type="text" placeholder="Username" name="userName" required>
-      <input type="text" placeholder="Email" name="email" required>
+    <form name="registerForm" action="checkRegister.php" method="post" onSubmit="return submitList()">
+      <input type="email" placeholder="Email" name="userName" required>
       <input type="text" placeholder="Name" name="name" required>
       <input type="password" placeholder="Password" name="password" required>
       <input type="password" placeholder="Confirm Password" name="cpassword" required>
