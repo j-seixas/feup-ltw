@@ -3,6 +3,7 @@ body {
   background: #868e96;
 }
 
+
 #login, #signup {
   margin: auto;
   width: 20%;
@@ -53,3 +54,39 @@ body > header > * > a {
   text-align: center;
   text-decoration: none;
 }
+
+#info {
+    background: #2a2f3f;
+    color: white;
+    display: flex;
+    align-items: center;
+    
+  }
+  
+  #info a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  #info > a {
+    background-color: white;
+    color: white;
+    padding: 0 1em;
+    font-size: 1.5em;
+    align-self: flex-end;
+  }
+  
+  #info img {
+    padding: 1em 0;
+    margin-left: 1em;
+    margin-top: 10px;
+    width: 100px;
+  }
+  
+  #info h1 {
+    font-size: 4em;
+    font-family: 'S Hand';
+    color: rgb(255, 255, 255);
+    margin: 0;
+    flex-grow: 1;
+  }

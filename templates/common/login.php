@@ -20,5 +20,4 @@
     <?php } ?>
   </div>
 </div>
-<?php $var = sha1(12345);
-echo $var; ?>
+
