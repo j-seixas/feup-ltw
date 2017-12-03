@@ -1,5 +1,5 @@
 body {
-
+  margin: 0;
   background: #2C3E50;
 }
 
@@ -73,6 +73,13 @@ body > header > * > a {
   text-decoration: none;
 }
 
+body > header {
+  background: #2a2f3f;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
 #info {
     background: #2a2f3f;
     color: white;
@@ -95,6 +102,7 @@ body > header > * > a {
   }
 
   #info img {
+    display: inline-block;
     padding: 1em 0;
     margin-left: 1em;
     margin-top: 10px;
@@ -103,8 +111,31 @@ body > header > * > a {
 
   #info h1 {
     font-size: 4em;
-    font-family: 'S Hand';
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: normal;
     color: rgb(255, 255, 255);
     margin: 0;
     flex-grow: 1;
   }
+
+  #lists {
+    display: inline-block;
+    margin-left: 63%;
+    height:48px;
+    width:48px;
+  }
+
+  #profile {
+    display: inline-block;
+    margin-left: 10px;
+    height:48px;
+    width:48px;
+  }
+
+  #logout {
+    display: inline-block;
+    margin-left: 10px;
+   
+
+  }
+

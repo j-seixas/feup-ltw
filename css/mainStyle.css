@@ -1,27 +1,39 @@
-nav {
+header {
   width: 100%
   color: white;
+  background: #34495E;
+  min-height: 48px;
+  max-height: 48px;
+  padding: 10px;
 }
 
-.leftMenuBt {
+.buttonIcons {
+  color: initial;
+  background: #34495E;
   outline: 0;
   border: 0;
-  background: #34495E;
-  color: white;
   cursor: pointer;
+  padding: 0;
+  width: 48px;
+  min-height: 48px;
+  max-height: 48px;
+  margin: 10px;
+
 }
 
-.leftMenuBt:focus, .leftMenuBt:hover, .leftMenuBt:active{
+.buttonIcons i{
+  color: white;
+  font-size: 48px;
+}
+
+.buttonIcons:focus, .buttonIcons:hover, .buttonIcons:active{
+  background: #2C3E50;
   color: #1ABC9C;
 }
 
 body {
-
-  margin: 1em;
-  margin-top: 0em;
-  margin-bottom: 0em;
-  padding: 10em;
-  padding-top: 0em;
+  width: 100%;
+  margin: auto;
   background-color: #e9ecef;
 
 }
