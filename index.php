@@ -1,14 +1,11 @@
 <?php
-  include_once('includes/init.php');
+  include_once('init.php');
 
-  include_once('database/category.php');
-  include_once('database/product.php');
-
-  $categories = getAllCategories();
-  $products = getAllProducts();
-
-  include_once('templates/common/header.php');
-  include_once('templates/category/list_categories.php');
-  include_once('templates/product/list_products.php');
-  include_once('templates/common/footer.php');
+  if(isset($_SESSION['userName']) && $_SESSION['userName']!=''){
+    include_once('templates/mainPage.php');
+  } else {
+    include_once('templates/header.php');
+    include_once('templates/login.php');
+    include_once('templates/footer.php');
+  }
 ?>

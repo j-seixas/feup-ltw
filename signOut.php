@@ -1,5 +1,5 @@
 <?php
-  include_once('includes/init.php');
+  include_once('index.php');
 
   session_destroy();
 
