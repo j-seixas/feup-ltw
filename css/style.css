@@ -1,22 +1,149 @@
 html {
-    background-color: #343a40;
-    width: 80em;
+    background-color: #ffffff;
 }
 
 body {
 
+  /*
   margin: 1em;
-  padding: 10em;
-  background-color: #e9ecef;
-
-}
-
-#login {
+  padding: 10em;*/
+  background-color: #ffffff;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 3fr;
+  grid-template-areas:
+    "header     header"
+    "footer     footer";
+
 }
 
+
 body > header > * > a {
-  text-align: center;
+  background-color: black;
+  display: center;
+  justify-content: space-between;
+  align-items: stretch;
+  grid-area: header;
+}
+
+#indexImage {
+  display: flex;
+  align-items: center;
+  padding: 10em 0;
+}
+
+#info {
+
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  padding: 1em 0;
+  margin-left: 1em;
+  margin-top: 10px;
+}
+
+#info a {
   text-decoration: none;
+  color: black;
+}
+
+#info > a {
+  padding: 0 1em;
+  font-size: 1.5em;
+  align-self: flex-end;
+}
+
+#info img {
+  width: 100px;
+}
+
+#info h1 {
+  font-size: 4em;
+  font-family: 'S Hand', cursive;
+  margin: 0;
+  flex-grow: 1;
+}
+
+#login  {
+  padding: 1em 0 1em 1em;
+  border-left: 1px dotted #333;
+}
+
+#login form {
+  display: right;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  max-width: 200px;
+}
+
+#login input {
+  padding: 0.1em;
+}
+
+#login div {
+  display: flex;
+  align-items: left;
+
+  margin-top: 3px;
+}
+
+#login div > input {
+  display: flex;
+  align-items: left;
+  margin-top: 3px;
+  margin-right: 10px;
+}
+
+#login a {
+  text-decoration: none;
+  color: #0084c8;
+  flex-grow: 1;
+  text-align: center;
+}
+
+#login div > a {
+  display: flex;
+  align-items: left;
+  margin-top: 3px;
+}
+footer {
+  grid-area: footer;
+  background-color: #333;
+  color: white;
+  padding: 1em;
+}
+
+/*
+#info img {
+  width: 50px;
+}
+
+
+#info h1 {
+  font-size: 2em;
+}
+
+@media (max-width: 70em) {
+  body {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+
+
+  #info img {
+    width: 50px;
+  }
+
+  #info > a {
+    font-size: 1em;
+  }
+
+  #info h1 {
+    font-size: 2em;
+  }
+*/
+
 }
