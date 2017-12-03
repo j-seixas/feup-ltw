@@ -10,7 +10,9 @@
         <input type="submit" value="Sign Up" id="register">
       </div>
       <div>
-        <a href="index.php">Sign In</a>
+        <p class="text">
+          Already have an account? <a href="index.php">Sign In</a>
+        </p>
       </div>
     </form>
   </div>

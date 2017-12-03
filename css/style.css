@@ -46,6 +46,12 @@ body {
   background: #868e96;
 }
 
+.text {
+  font-size: 0.9em;
+  margin: 15 0 0;
+  color: #495057;
+}
+
 body > header > * > a {
   width: 100%;
   margin: auto;

@@ -14,7 +14,9 @@
           <input type="submit" value="Sign In">
         </div>
         <div>
-          <a href="signUp.php">Sign Up</a>
+          <p class="text">
+            Don't have an account? <a href="signUp.php">Sign Up</a>
+          </p>
         </div>
       </form>
     <?php } ?>
