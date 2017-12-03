@@ -1,0 +1,27 @@
+html {
+    background-color: #343a40;
+    width: 100%;
+    height: 100%;
+    margin: 0em;
+}
+
+body {
+
+  margin: 1em;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  padding: 10em;
+  padding-top: 0em;
+  background-color: #e9ecef;
+
+}
+
+#login {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+body > header > * > a {
+  text-align: center;
+  text-decoration: none;
+}
