@@ -118,9 +118,24 @@ body > header {
     flex-grow: 1;
   }
 
-  
+  #lists {
+    display: inline-block;
+    margin-left: 63%;
+    height:48px;
+    width:48px;
+  }
+
+  #profile {
+    display: inline-block;
+    margin-left: 10px;
+    height:48px;
+    width:48px;
+  }
+
   #logout {
     display: inline-block;
-    margin-left: 70%;
+    margin-left: 10px;
+   
 
   }
+

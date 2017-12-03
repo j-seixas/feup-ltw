@@ -18,9 +18,20 @@
         <img src="resources/images/logo.svg"/>
         <h1><a href="index.php" style='color:white'>To-Do Master</a></h1>
       </div>
+      <div id="lists">
+        <form action="lists.php" method="post">
+        <input type="image" src="resources/images/icons/lists.svg" alt="viewProfile" />
+        </form>
+      </div>
+      <div id="profile">
+        <form action="profile.php" method="post">
+        <input type="image" src="resources/images/icons/account.svg" alt="viewProfile" />
+        </form>
+      </div>
       <div id="logout">
         <form action="signOut.php" method="post">
         <input type="image" src="resources/images/icons/logout.svg" alt="Submit Form" />
         </form>
       </div>
+
     </header>
