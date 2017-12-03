@@ -1,5 +1,5 @@
 body {
-
+  margin: 0;
   background: #2C3E50;
 }
 
@@ -103,7 +103,7 @@ body > header > * > a {
 
   #info h1 {
     font-size: 4em;
-    font-family: 'S Hand';
+    font-family: 'Ubuntu', sans-serif;
     color: rgb(255, 255, 255);
     margin: 0;
     flex-grow: 1;
