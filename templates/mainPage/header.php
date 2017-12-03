@@ -4,8 +4,11 @@
     <title>Can't Forget</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/mainStyle.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
   <body>
-    <header>
-      <h1><a href="index.php">Can't Forget</a></h1>
-    </header>
+    <nav>
+      <div>
+        <button class="leftMenuBt" type="button"><i class="material-icons md-light">reorder</i></button>
+      </div>
+    </nav>
