@@ -11,7 +11,7 @@ header('Location: ' . $_SERVER['HTTP_REFERER']);
   $_SESSION['errorR']="Passwords don't matcht!";
   header('Location: ' . $_SERVER['HTTP_REFERER']);
 } else {
-  registUser($_POST['name'], $userName, $_POST['date'], $_POST['gender'],
+  registUser($_POST['name'], $userName, $_POST['date'],
       $_POST['password']);
   if (signInCorrect($userName, $_POST['password'])) {
     setUser($userName);

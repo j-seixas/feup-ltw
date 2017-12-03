@@ -14,10 +14,10 @@
     return $stmt->fetch() == false;
   }
 
-  function registUser($name, $username, $date, $gender, $password){
+  function registUser($name, $username, $date, $password){
     global $dbh;
-    $stmt = $dbh->prepare('INSERT INTO users VALUES (?, ?, ?, ?, ?)');
-    $stmt->execute(array($name, $username, $date, $gender, sha1($password)));
+    $stmt = $dbh->prepare('INSERT INTO users VALUES (?, ?, ?, ?)');
+    $stmt->execute(array($name, $username, $date, sha1($password)));
 
   }
 
