@@ -1,6 +1,6 @@
 body {
 
-  background: #868e96;
+  background: #2C3E50;
 }
 
 
@@ -15,7 +15,7 @@ body {
   position: relative;
 
   text-align: center;
-  background: #f8f9fa;
+  background: #34495E;
   padding: 30px;
   margin: 0 auto 0;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 1px 5px 5px 0 rgba(0, 0, 0, 0.2);
@@ -26,7 +26,9 @@ body {
   font-family: 'Roboto Condensed', sans-serif;
   outline: 0;
   width: 80%;
-  background: #dee2e6;
+  background: #2C3E50;
+  color: #1ABC9C;
+  border-radius: 20px;
   border: 0;
   box-sizing: border-box;
   margin: 0 0 15px;
@@ -34,9 +36,14 @@ body {
   font-size: 15px;
 }
 
+#signIn input:focus, #register input:focus{
+  border: 1px solid;
+  border-color: #1ABC9C;
+}
+
 #signIn input[type=submit], #register input[type=submit] {
   text-transform: uppercase;
-  background: #adb5bd;
+  background: #16A085;
   color: white;
   cursor: pointer;
 }
@@ -44,13 +51,18 @@ body {
 #signIn input[type=submit]:hover,#signIn input[type=submit]:active,
 #signIn input[type=submit]:focus, #register input[type=submit]:hover,
 #register input[type=submit]:active,#register input[type=submit]:focus {
-  background: #868e96;
+  background: #1ABC9C;
 }
 
 .text {
   font-size: 0.9em;
   margin: 15 0 0;
-  color: #495057;
+  color: white;
+}
+
+.text > a {
+  text-decoration: none;
+  color: #1ABC9C;
 }
 
 body > header > * > a {
@@ -66,14 +78,14 @@ body > header > * > a {
     color: white;
     display: flex;
     align-items: center;
-    
+
   }
-  
+
   #info a {
     text-decoration: none;
     color: black;
   }
-  
+
   #info > a {
     background-color: white;
     color: white;
@@ -81,14 +93,14 @@ body > header > * > a {
     font-size: 1.5em;
     align-self: flex-end;
   }
-  
+
   #info img {
     padding: 1em 0;
     margin-left: 1em;
     margin-top: 10px;
     width: 100px;
   }
-  
+
   #info h1 {
     font-size: 4em;
     font-family: 'S Hand';
