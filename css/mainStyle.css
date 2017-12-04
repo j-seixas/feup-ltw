@@ -28,11 +28,6 @@ header span{
   float: right;
 }
 
-#profile {
-  width: 160px;
-  text-align: center;
-}
-
 .buttonIcons i{
   margin: 0;
   color: white;
