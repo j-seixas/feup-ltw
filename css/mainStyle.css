@@ -32,7 +32,12 @@ header span{
   text-align: center;
 }
 
+.buttonIcons {
+  color: white;
+}
+
 .buttonIcons i{
+  margin: 0;
   color: white;
   font-size: 48px;
   width: 48px;
@@ -61,4 +66,9 @@ body {
 body > header > * > a {
   text-align: center;
   text-decoration: none;
+}
+
+#accountButton{
+  color:white;
+  background-color: white;
 }

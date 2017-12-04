@@ -115,6 +115,7 @@ body > header {
     font-weight: normal;
     color: rgb(255, 255, 255);
     margin: 0;
+    margin-left: 5px;
     flex-grow: 1;
   }
 

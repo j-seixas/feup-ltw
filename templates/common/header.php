@@ -15,7 +15,7 @@
   <body>
     <header>
       <div id= "info">
-        <img src="resources/images/logo.svg"/>
-        <h1><a href="index.php" style='color:white'>To-Do Master</a></h1>
+        <img src="resources/images/logo.svg" href="index.php"/>
+        <h1><a href="index.php" style='color:white'>List It</a></h1>
       </div>
     </header>
