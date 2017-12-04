@@ -31,7 +31,9 @@
         </script>
       </span>
       <span class="buttonsRight">
-        <button id="profile" class="buttonIcons" type="button"><?=$_SESSION['userName']?><i class="material-icons">account_circle</i></button>
+        <button id="profile" class="buttonIcons" type="button">
+          <i class="material-icons">account_circle</i>
+        </button>
         <script>
           document.getElementById("profile").onclick = function(){
             location.href = "profile.php";

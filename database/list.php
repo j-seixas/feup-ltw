@@ -1,14 +1,22 @@
 <?php
 
-  function getAllLists($id) {
+  function getAllLists($username) {
     global $dbh;
     $stmt = $dbh->prepare("SELECT *
-                           FROM lists JOIN
-                                users USING (idUser)
-                           WHERE idUser = ?
-                           ORDER BY lists.id DESC");
-    $stmt->execute(array($id));
-    return $stmt->fetch();
+                           FROM lists
+                           WHERE userName = ?");
+    $stmt->execute(array($username));
+    return $stmt->fetchAll();
+  }
+
+
+  function getAllItems($listID) {
+    global $dbh;
+    $stmt = $dbh->prepare("SELECT *
+                           FROM items
+                           WHERE idList = ?");
+    $stmt->execute(array($listID));
+    return $stmt->fetchAll();
   }
 
   function getListById($id) {

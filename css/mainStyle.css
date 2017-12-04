@@ -21,28 +21,43 @@ header span{
   width: 60px;
   min-height: 60px;
   max-height: 60px;
-
+  font-size: 24px;
 }
+
 .buttonsRight {
   float: right;
-}
-
-#profile {
-  width: 160px;
-  text-align: center;
 }
 
 .buttonIcons i{
   color: white;
   font-size: 48px;
-  width: 48px;
+  width: 60px;
   min-height: 48px;
   max-height: 48px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .buttonIcons:focus, .buttonIcons:hover, .buttonIcons:active{
+
   background: #2C3E50;
   color: #1ABC9C;
+}
+
+.buttonIcons i:focus, .buttonIcons i:hover, .buttonIcons i:active{
+  background: #2C3E50;
+  color: #1ABC9C;
+}
+
+.list {
+  color: initial;
+  background: #34495E;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  width: 150px;
+  padding: 10px;
+  margin: 10px;
 }
 
 body {
@@ -56,9 +71,4 @@ body {
 #login {
   display: grid;
   grid-template-columns: 1fr 3fr;
-}
-
-body > header > * > a {
-  text-align: center;
-  text-decoration: none;
 }
