@@ -14,27 +14,37 @@
 
   <body>
     <header>
-      <div>
-        <button class="buttonIcons" type="button"><i class="material-icons md-light">dehaze</i></button>
-      </div>
-      <div id= "info">
-        <img src="resources/images/logo.svg"/>
-        <h1><a href="index.php" style='color:white'>To-Do Master</a></h1>
-      </div>
-      <div id="lists">
-        <form action="lists.php" method="post">
-        <input type="image" src="resources/images/icons/lists.svg" alt="viewProfile" />
-        </form>
-      </div>
-      <div id="profile">
-        <form action="profile.php" method="post">
-        <input type="image" src="resources/images/icons/account.svg" alt="viewProfile" />
-        </form>
-      </div>
-      <div id="logout">
-        <form action="signOut.php" method="post">
-        <input type="image" src="resources/images/icons/logout.svg" alt="Submit Form" />
-        </form>
-      </div>
+      <span>
+        <button id="leftMenu" class="buttonIcons" type="button"><i class="material-icons">dehaze</i></button>
+        <script>
+          document.getElementById("leftMenu").onclick = function(){
+            location.href = "index.php";
+          };
+        </script>
+      </span>
+      <span class="buttonsRight">
+        <button id="logout" class="buttonIcons" type="button"><i class="material-icons">exit_to_app</i></button>
+        <script>
+        document.getElementById("logout").onclick = function(){
+          location.href = "signOut.php";
+        };
+        </script>
+      </span>
+      <span class="buttonsRight">
+        <button id="profile" class="buttonIcons" type="button"><?=$_SESSION['userName']?><i class="material-icons">account_circle</i></button>
+        <script>
+          document.getElementById("profile").onclick = function(){
+            location.href = "profile.php";
+          };
+        </script>
+      </span>
+      <span class="buttonsRight">
+        <button id="lists" class="buttonIcons" type="button"><i class="material-icons">assignment</i></button>
+        <script>
+        document.getElementById("lists").onclick = function(){
+          location.href = "lists.php";
+        };
+        </script>
+      </span>
 
     </header>
