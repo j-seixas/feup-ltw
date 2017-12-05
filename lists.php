@@ -3,6 +3,7 @@ include_once('includes/init.php');
 include_once('database/list.php');
 
   $lists = getAllLists($_SESSION['userName']);
+  echo '<div id=listsDiv>';
   foreach ($lists as $list) {
 
     echo '<div class="list">
@@ -25,5 +26,6 @@ include_once('database/list.php');
     echo '</div>';
   }
 
+  echo '</div>';
 
  ?>

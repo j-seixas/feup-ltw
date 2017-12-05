@@ -14,10 +14,25 @@
 
   <body>
     <header>
-      <span>
-        <button id="leftMenu" class="buttonIcons" type="button"><i class="material-icons">dehaze</i></button>
+      <span class="buttonsLeft">
+        <button id="add" class="buttonIcons" type="button"><i class="material-icons">add_circle_outline</i></button>
         <script>
-          document.getElementById("leftMenu").onclick = function(){
+          document.getElementById("add").onclick = function(){
+            if(document.getElementById("sideBarAdd").style.width == "300px"){
+              document.getElementById("sideBarAdd").style.width = "0px";
+              document.getElementById("listsDiv").style.marginLeft = "15px";
+            }else{
+              document.getElementById("sideBarAdd").style.width = "300px";
+              document.getElementById("listsDiv").style.marginLeft = "315px";
+            }
+          };
+        </script>
+      </span>
+
+      <span class="buttonsLeft">
+        <button id="edit" class="buttonIcons" type="button"><i class="material-icons">mode_edit</i></button>
+        <script>
+          document.getElementById("edit").onclick = function(){
             location.href = "index.php";
           };
         </script>

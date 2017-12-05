@@ -7,7 +7,7 @@
         <input type="password" placeholder="Password" name="password" required><br>
         <input type="password" placeholder="Confirm Password" name="cpassword" required><br>
         <input type="date" name="date" required><br>
-        <input type="submit" value="Sign Up" id="register">
+        <input type="submit" value="Sign Up">
       </div>
       <div>
         <p class="text">
