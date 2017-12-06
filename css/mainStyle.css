@@ -110,11 +110,13 @@ body > header > * > a {
   top: 0;
   left: 0;
   margin: 0;
+  margin-top: 60px;
   z-index: 0;
   height: 100%;
-  padding-top: 60px;
+  /*padding-top: 60px;*/
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 1px 5px 5px 0 rgba(0, 0, 0, 0.2);
   overflow-x: hidden;
+  overflow-y: overlay;
   transition: 0.5s;
 }
 
@@ -131,6 +133,7 @@ body > header > * > a {
   background: #34495E;
   padding: 30px;
   margin: 0 auto 0;
+  margin-bottom: 100px;
 
 }
 
@@ -145,6 +148,7 @@ body > header > * > a {
   box-sizing: border-box;
   margin: 0 0 15px;
   padding: 3%;
+  padding-left: 7%;
   font-size: 15px;
 }
 
@@ -166,9 +170,78 @@ body > header > * > a {
   background: #1ABC9C;
 }
 
-#itemsAddList {
+#addTask {
 
 }
+
+.sideBar::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #2C3E50;
+}
+
+.sideBar::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #2C3E50;
+}
+
+.sideBar::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #1ABC9C;
+}
+
+
+#addTask {
+  background: #34495E;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+  font-size: 16px;
+  width: 80%;
+  min-height: 36px;
+  max-height: 36px;
+  text-align: center;
+  border-radius: 20px;
+  border: 0;
+}
+
+#addTask p {
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #1ABC9C;
+  text-decoration: none;
+  margin-right: 0;
+  margin-bottom: 6px;
+  margin-top: 12px;
+  width: 132px;
+  float: left;
+
+}
+
+#addTask i {
+  margin: 0;
+  color: #1ABC9C;
+  font-size: 36px;
+  width: 50px;
+  max-height: 36px;
+  min-height: 36px;
+  padding: 0;
+  float: left;
+}
+
+#addTask:focus, #addTask:hover, #addTask:active{
+
+  background: #2C3E50;
+}
+/*
+#addTask i:focus, #addTask i:hover, #addTask i:active{
+  background: #2C3E50;
+  color: #1ABC9C;
+} */
 
 
 /******** Lists Part **********/

@@ -33,6 +33,7 @@ body {
   box-sizing: border-box;
   margin: 0 0 15px;
   padding: 3%;
+  padding-left: 7%;
   font-size: 15px;
 }
 
@@ -136,7 +137,6 @@ body > header {
   #logout {
     display: inline-block;
     margin-left: 10px;
-   
+
 
   }
-
