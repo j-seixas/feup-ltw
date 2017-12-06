@@ -19,32 +19,22 @@
     return $stmt->fetchAll();
   }
 
-  function getListById($id) {
+  function getListIDwithTitle($title, $userName) {
     global $dbh;
-    $stmt = $dbh->prepare("SELECT *
-                           FROM product JOIN
-                                category USING (cat_id)
-                           WHERE pro_id = ?");
-    $stmt->execute(array($id));
+    $stmt = $dbh->prepare("SELECT idList
+                           FROM lists
+                           WHERE title = ? AND userName = ?");
+    $stmt->execute(array($title, $userName));
     return $stmt->fetch();
   }
 
-  function getCartProducts() {
+  function getListsAfterID($id, $userName) {
     global $dbh;
-
-    $products = array();
-
-    if (isset($_SESSION['cart'])) {
-        foreach ($_SESSION['cart'] as $id => $qty) {
-          $product = getProductById($id);
-          if ($product !== false) {
-            $product['qty'] = $qty;
-            $products[] = $product;
-          }
-        }
-    }
-
-    return $products;
+    $stmt = $dbh->prepare("SELECT *
+                           FROM lists
+                           WHERE idList = ? AND userName = ?");
+    $stmt->execute(array($id, $userName));
+    return $stmt->fetchAll();
   }
 
 ?>

@@ -24,3 +24,14 @@ document.getElementById("profile").onclick = function(){
 document.getElementById("lists").onclick = function(){
   location.href = "lists.php";
 }
+
+document.getElementById("addTask").onclick = function(){
+  let todoIt = document.createElement("input");
+  todoIt.setAttribute('class', 'todoItems');
+  todoIt.setAttribute('placeholder', 'TODO Item');
+  todoIt.setAttribute('name', 'todoitem');
+  let br = document.createElement("br");
+  let addList = document.getElementById("itemsAddList");
+  addList.appendChild(todoIt);
+  addList.appendChild(br);
+}
