@@ -32,9 +32,16 @@
     global $dbh;
     $stmt = $dbh->prepare("SELECT *
                            FROM lists
-                           WHERE idList = ? AND userName = ?");
+                           WHERE idList > ? AND userName = ?");
     $stmt->execute(array($id, $userName));
     return $stmt->fetchAll();
+  }
+
+
+  function addList($username, $title){
+    global $dbh;
+    $stmt = $dbh->prepare('INSERT INTO lists VALUES (NULL, ?, ?)');
+    $stmt->execute(array($username, $title));
   }
 
 ?>

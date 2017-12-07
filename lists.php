@@ -6,7 +6,7 @@ include_once('database/list.php');
   echo '<div id=listsDiv>';
   foreach ($lists as $list) {
 
-    echo '<div class="list">
+    echo '<div class="list" id=' . $list['idList'] . '>
     <div class="title">
     <a>' . $list['title'] . '</a>
     </div>';
