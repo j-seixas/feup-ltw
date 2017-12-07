@@ -16,7 +16,7 @@ function newList(event) {
   let lists = document.getElementsByClassName('list');
   console.log(lists);
   for(let i = 0; i < lists.length ; i++){
-    id = id <= lists[i].id ? lists[i].id : id;
+    id = id <= Number(lists[i].id) ? Number(lists[i].id) : id;
   }
     alert(id);
 
