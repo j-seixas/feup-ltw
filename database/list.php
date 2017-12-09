@@ -37,11 +37,26 @@
     return $stmt->fetchAll();
   }
 
+  function getListAfterID($id, $userName) {
+    global $dbh;
+    $stmt = $dbh->prepare("SELECT *
+                           FROM lists
+                           WHERE idList > ? AND userName = ?");
+    $stmt->execute(array($id, $userName));
+    return $stmt->fetch();
+  }
+
 
   function addList($username, $title){
     global $dbh;
     $stmt = $dbh->prepare('INSERT INTO lists VALUES (NULL, ?, ?)');
     $stmt->execute(array($username, $title));
+  }
+
+  function addTask($listID, $task){
+    global $dbh;
+    $stmt = $dbh->prepare('INSERT INTO items VALUES (NULL, ?, 0, ?)');
+    $stmt->execute(array($listID, $task));
   }
 
 ?>

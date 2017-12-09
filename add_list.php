@@ -4,10 +4,17 @@
 
   $title = $_POST['title'];
   $id = $_POST['id'];
+  $tasks = explode(',', $_POST['tasks']);
   $userName = $_SESSION['userName'];
-  addList($userName,$title);
 
-//  $id = getListIDwithTitle($title, $userName);
-  $lists = getListsAfterID($id, $userName);
-  echo json_encode($lists);
+  addList($userName,$title);
+  $list = getListAfterID($id, $userName);
+
+  foreach ($tasks as $task) {
+    addTask($list['idList'], $task);
+  }
+
+  $items = getAllItems($list['idList']);
+  $var = array('list' => $list, 'tasks' => $items);
+  echo json_encode($var);
 ?>

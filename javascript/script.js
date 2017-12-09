@@ -27,6 +27,7 @@ document.getElementById("lists").onclick = function(){
 
 document.getElementById("addTask").onclick = function(){
   let todoIt = document.createElement("input");
+  todoIt.setAttribute('type', 'text');
   todoIt.setAttribute('class', 'todoItems');
   todoIt.setAttribute('placeholder', 'TODO Item');
   todoIt.setAttribute('name', 'todoitem');

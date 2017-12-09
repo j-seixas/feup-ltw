@@ -17,11 +17,7 @@ include_once('database/list.php');
       if($item['complete'])
         echo 'checked';
       echo '> ' . $item["description"] . '</label><br>';
-/*      echo '<div class="item">
-      <button class="checkItem" type="button"><i class="material-icons">account_circle</i></button>
-      <a>' . $item['description'] . '</a>
-      <button class="eraseItem" type="button"><i class="material-icons">account_circle</i></button>
-      </div>';*/
+
     }
     echo '</div>';
   }
