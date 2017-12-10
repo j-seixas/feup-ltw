@@ -12,14 +12,22 @@ include_once('database/list.php');
     <div class="title">
     <a>' . $list['title'] . '</a>
     </div>';
+    echo '<div class="checkboxes">';
     $_SESSION['items'] = getAllItems($list['idList']);
-    echo '<div class="checkboxes"';
 
     foreach ($_SESSION['items'] as $item) {
-      echo '<label> <input type="checkbox" ';
-      if($item['complete'])
-        echo 'checked';
-      echo '> ' . $item["description"] . '</label><br>';
+      echo '<div class="task">';
+      if($item['complete']){
+        echo '<button class="checkedButton" type="button"><i class="material-icons">check_box</i><p>'
+        . $item["description"] . '</p></button>
+        <button class="erase"><i class="material-icons">close</i></button>';
+      } else {
+        echo '<button class="uncheckedButton" type="button"><i class="material-icons">check_box_outline_blank</i><p>'
+        . $item["description"] . '</p></button>
+        <button class="erase"><i class="material-icons">close</i></button>';
+      }
+
+      echo '</div>';
 
     }
     echo '</div></div></div>';
