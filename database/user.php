@@ -34,9 +34,9 @@
   function getUserInfoByUserName($username,$info){
     if($info == 'password')
         return null;
-    global $db;
-    $statement = $db->prepare('SELECT * FROM users WHERE username = ? ');
-    $statement->execute([$username]);
+    global $dbh;
+    $statement = $dbh->prepare('SELECT * FROM users WHERE username = ? ');
+    $statement->execute(array($username));
     return $statement->fetch()[$info];
 }
 ?>
