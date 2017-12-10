@@ -41,6 +41,8 @@ function receiveLists(data){
   let list = response.list;
   let tasks = response.tasks;
 
+  let listDiv = document.createElement('div');
+  listDiv.classList.add('listDiv');
   let listEl = document.createElement('div');
   listEl.classList.add('list');
   listEl.setAttribute('id',  list.idList );
@@ -53,7 +55,9 @@ function receiveLists(data){
     listEl.innerHTML += '<label> <input type="checkbox" > ' + tasks[i].description + '</label><br>';
   }
 
-  section.appendChild(listEl);
+
+  listDiv.appendChild(listEl);
+  section.appendChild(listDiv);
 
 
 }

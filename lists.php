@@ -4,7 +4,7 @@ include_once('database/list.php');
 
   $lists = getAllLists($_SESSION['userName']);
   echo '<div id=listsDiv>';
-//  echo '<div id=listsInnerDiv>';
+
   foreach ($lists as $list) {
     echo '<div class="listDiv">';
 
