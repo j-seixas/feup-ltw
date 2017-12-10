@@ -271,7 +271,6 @@ body > header > * > a {
   background: #34495E;
   outline: 0;
   border: 0;
-  cursor: pointer;
 
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 1px 5px 5px 0 rgba(0, 0, 0, 0.2);
 }
@@ -283,6 +282,7 @@ body > header > * > a {
   white-space: initial;
   overflow: hidden;
   padding-bottom: 5px;
+  padding-left: 5px;
   border-bottom: 2px solid #2C3E50;
 }
 
@@ -291,4 +291,81 @@ body > header > * > a {
 }
 .checkboxes label > input{
   padding-top: 20px;
+}
+
+.checkedButton, .uncheckedButton {
+  border: 0;
+  outline: 0;
+  background: #34495E;
+  cursor: pointer;
+  font-size: 16px;
+  width: 155px;
+  text-align: center;
+  display:inline-flex;
+  align-items: center;
+
+}
+
+.checkedButton p, .uncheckedButton p {
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #1ABC9C;
+  text-decoration: none;
+  float: left;
+  margin-bottom: 6px;
+  margin-top: 8px;
+  white-space: initial;
+  overflow: hidden;
+}
+
+.checkedButton i, .uncheckedButton i {
+  margin: 0;
+  color: #1ABC9C;
+  font-size: 32px;
+  height: 100%;
+  width: 50px;
+  max-height: 36px;
+  min-height: 36px;
+  padding: 0;
+
+}
+
+.erase {
+  visibility: hidden;
+  border: 0;
+  outline: 0;
+  background: #34495E;
+  width: 50px;
+  cursor: pointer;
+  text-align: center;
+  display:inline-flex;
+  align-items: center;
+
+}
+
+.erase i {
+  margin: 0;
+  color: #1ABC9C;
+  font-size: 32px;
+  height: 100%;
+  width: 50px;
+  max-height: 36px;
+  min-height: 36px;
+  padding: 0;
+  transition: transform .5s;
+}
+
+.task:hover .erase, .task:active .erase, .task:focus .erase {
+  visibility: visible;
+
+}
+
+.task:hover .erase i, .task:active .erase i, .task:focus .erase i {
+
+  transform: rotate(-90deg);
+
+}
+
+#addTask:focus, #addTask:hover, #addTask:active{
+
+  background: #2C3E50;
 }
