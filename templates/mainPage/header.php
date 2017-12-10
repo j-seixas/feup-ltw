@@ -17,7 +17,7 @@
   <body>
     <header>
       <span class="buttonsLeft">
-        <button id="add" class="buttonIcons" type="button"><i class="material-icons">add_circle_outline</i></button>
+        <button id="add" class="buttonIcons" type="button"><i class="material-icons">note_add</i></button>
       </span>
 
       <span class="buttonsLeft">

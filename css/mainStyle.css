@@ -1,13 +1,8 @@
-#html {
-  width: 100vh;
-  height: 100vh;
-  margin: 0;
-}
-
 body {
   margin: 0;
   background-color: #2C3E50;
-
+  width: 100%;
+  height: 100%;
 }
 
 header {
@@ -70,19 +65,10 @@ header span{
   color: #1ABC9C;
 }
 
-.list {
-  float: left;
-  color: initial;
-  background: #34495E;
-  outline: 0;
-  border: 0;
-  cursor: pointer;
-  width: 150px;
-  padding: 10px;
-  margin: 15px;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 1px 5px 5px 0 rgba(0, 0, 0, 0.2);
-}
 
+.checkboxes{
+  box-sizing:border-box;
+}
 
 
 #login {
@@ -103,20 +89,25 @@ body > header > * > a {
 /******** SideBar Part **********/
 .sideBar {
   width: 0px;
+  height: 100%;
   color: white;
   background: #34495E;
 
+  box-sizing: border-box;
   position: fixed;
   top: 0;
   left: 0;
   margin: 0;
-  margin-top: 60px;
+  border: 0 solid;
+  border-top-width: 60px;
+
+  padding-bottom: 10px;
+
   z-index: 0;
-  height: 100%;
-  /*padding-top: 60px;*/
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 1px 5px 5px 0 rgba(0, 0, 0, 0.2);
   overflow-x: hidden;
   overflow-y: overlay;
+
   transition: 0.5s;
 }
 
@@ -127,13 +118,13 @@ body > header > * > a {
 
 .form {
   min-width: 240px;
-  position: relative;
+  position: absolute;
 
   text-align: center;
   background: #34495E;
   padding: 30px;
   margin: 0 auto 0;
-  margin-bottom: 100px;
+
 
 }
 
@@ -174,21 +165,19 @@ body > header > * > a {
 
 }
 
-.sideBar::-webkit-scrollbar-track
-{
+.sideBar::-webkit-scrollbar-track, #listsDiv::-webkit-scrollbar-track {
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 	border-radius: 10px;
 	background-color: #2C3E50;
 }
 
-.sideBar::-webkit-scrollbar
-{
+.sideBar::-webkit-scrollbar, #listsDiv::-webkit-scrollbar {
 	width: 6px;
+  height: 7px;
 	background-color: #2C3E50;
 }
 
-.sideBar::-webkit-scrollbar-thumb
-{
+.sideBar::-webkit-scrollbar-thumb, #listsDiv::-webkit-scrollbar-thumb {
 	border-radius: 10px;
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
 	background-color: #1ABC9C;
@@ -246,8 +235,52 @@ body > header > * > a {
 
 /******** Lists Part **********/
 #listsDiv {
-  float: left;
-  min-height: 100%;
-  margin-left: 15px;
-  transition: margin-left .5s;
+
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  border: 0;
+  border-top: 60px solid;
+  border-left: 0px solid;
+
+  padding-left: 15px;
+  padding-right: 15px;
+  overflow-y: hidden;
+  overflow-x: overlay;
+  z-index: -1;
+
+  white-space: nowrap;
+  transition: border-left .5s;
+  box-sizing: border-box;
+}
+
+
+
+.listDiv {
+  vertical-align: top;
+  display: inline-block;
+  box-sizing:border-box;
+  width: 250px;
+  margin: 0;
+  outline: 0;
+  border: 15px solid #2C3E50;
+  height: 100%;
+}
+
+.list {
+  padding: 10px;
+  box-sizing:border-box;
+
+  color: initial;
+  background: #34495E;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+
+
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 1px 5px 5px 0 rgba(0, 0, 0, 0.2);
 }

@@ -9,7 +9,7 @@
 
         </div>
         <div class="buttonAddTask">
-          <button id="addTask" type="button"><i class="material-icons">add_circle_outline</i><p>Add TODO task</p></button>
+          <button id="addTask" type="button"><i class="material-icons">add</i><p>Add TODO task</p></button>
         </div>
         <input type="submit" value="Create new list" >
       </div>

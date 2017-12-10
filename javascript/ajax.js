@@ -18,7 +18,6 @@ function newList(event) {
   for(let i = 0; i < lists.length ; i++){
     id = id <= Number(lists[i].id) ? Number(lists[i].id) : id;
   }
-    alert(id);
 
   let tasks = [];
   let tasksDiv = document.querySelectorAll('#itemsAddList .todoItems');
@@ -34,7 +33,6 @@ function newList(event) {
   request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   request.send(encodeForAjax({title: title, id: id, tasks: tasksStr}));
 
-  alert("aaaa");
 }
 
 function receiveLists(data){
