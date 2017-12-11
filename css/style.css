@@ -6,12 +6,13 @@ body {
 
 #login, #signup {
   margin: auto;
-  width: 20%;
-  padding: 8% 0 0%;
+  max-width: 320px;
+  box-sizing: border-box;
+  padding: 8% 0 8%;
 }
 
 .form {
-  min-width: 300px;
+  min-width: 260px;
   position: relative;
 
   text-align: center;

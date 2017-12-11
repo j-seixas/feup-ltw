@@ -48,13 +48,14 @@ function receiveLists(data){
   listEl.setAttribute('id',  list.idList );
 
   listEl.innerHTML = '<div class="title"> <a>' + list.title +
-  '</a> </div>';
+  '</a> </div> <div class="checkboxes">';
 
 
   for(let i = 0; i < tasks.length ; i++){
     listEl.innerHTML += '<label> <input type="checkbox" > ' + tasks[i].description + '</label><br>';
   }
 
+  listEl.innerHTML += '</div';
 
   listDiv.appendChild(listEl);
   section.appendChild(listDiv);

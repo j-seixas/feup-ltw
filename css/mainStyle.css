@@ -351,7 +351,8 @@ body > header > * > a {
   max-height: 36px;
   min-height: 36px;
   padding: 0;
-  transition: transform .5s;
+  transform: rotate(25deg);
+
 }
 
 .task:hover .erase, .task:active .erase, .task:focus .erase {
@@ -360,8 +361,8 @@ body > header > * > a {
 }
 
 .task:hover .erase i, .task:active .erase i, .task:focus .erase i {
-
-  transform: rotate(-90deg);
+  transform: rotate(0deg);
+  transition: transform .5s;
 
 }
 
