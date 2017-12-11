@@ -71,4 +71,8 @@ function receiveLists(data){
   for(let i = 0; i < eraseButton.length; i++)
     eraseButton[i].addEventListener('click', eraseTask);
 
+  let uncheckedButt = document.querySelectorAll('.checkboxes .task .uncheckedButton');
+  for(let i = 0; i < uncheckedButt.length; i++)
+    uncheckedButt[i].onclick = checkB;
+
 }

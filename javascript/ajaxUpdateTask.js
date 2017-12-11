@@ -8,6 +8,7 @@ for(let i = 0; i < uncheckedButt.length; i++)
 
 function checkB(event){
   event.preventDefault();
+
   sendReq(event, 1);
 }
 
@@ -39,7 +40,7 @@ function receiveUpdated(data){
   let elementParent = document.getElementById(id);
   let bool = response.bool;
 
-  let element = elementParent.firstChild;
+  let element = elementParent.getElementsByTagName('button')[0];
 
   if(bool == 1){
 
@@ -53,4 +54,5 @@ function receiveUpdated(data){
     element.firstChild.innerHTML = 'check_box_outline_blank';
     element.onclick = checkB;
   }
+
 }
