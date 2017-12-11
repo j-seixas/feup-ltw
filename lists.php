@@ -16,7 +16,7 @@ include_once('database/list.php');
     $_SESSION['items'] = getAllItems($list['idList']);
 
     foreach ($_SESSION['items'] as $item) {
-      echo '<div class="task">';
+      echo '<div class="task" id="task' . $item["idItem"] . '">';
       if($item['complete']){
         echo '<button class="checkedButton" type="button"><i class="material-icons">check_box</i><p>'
         . $item["description"] . '</p></button>

@@ -1,5 +1,5 @@
 <?php
-
+  /***** LISTS *****/
   function getAllLists($username) {
     global $dbh;
     $stmt = $dbh->prepare("SELECT *
@@ -10,14 +10,6 @@
   }
 
 
-  function getAllItems($listID) {
-    global $dbh;
-    $stmt = $dbh->prepare("SELECT *
-                           FROM items
-                           WHERE idList = ?");
-    $stmt->execute(array($listID));
-    return $stmt->fetchAll();
-  }
 
   function getListIDwithTitle($title, $userName) {
     global $dbh;
@@ -53,10 +45,27 @@
     $stmt->execute(array($username, $title));
   }
 
+    /***** TASKS *****/
+
   function addTask($listID, $task){
     global $dbh;
     $stmt = $dbh->prepare('INSERT INTO items VALUES (NULL, ?, 0, ?)');
     $stmt->execute(array($listID, $task));
+  }
+
+  function getAllItems($listID) {
+    global $dbh;
+    $stmt = $dbh->prepare("SELECT *
+                          FROM items
+                          WHERE idList = ?");
+    $stmt->execute(array($listID));
+    return $stmt->fetchAll();
+  }
+
+  function eraseTask($id){
+    global $dbh;
+    $stmt = $dbh->prepare('DELETE FROM items WHERE idItem = ?');
+    $stmt->execute(array($id));
   }
 
 ?>

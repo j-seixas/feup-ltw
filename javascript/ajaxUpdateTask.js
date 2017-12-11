@@ -48,15 +48,20 @@ function receiveLists(data){
   listEl.setAttribute('id',  list.idList );
 
   listEl.innerHTML = '<div class="title"> <a>' + list.title +
-  '</a> </div> <div class="checkboxes">';
+  '</a> </div> ';
 
 
+
+  let checkboxes = document.createElement('div');
+  checkboxes.classList.add('checkboxes');
   for(let i = 0; i < tasks.length ; i++){
-    listEl.innerHTML += '<label> <input type="checkbox" > ' + tasks[i].description + '</label><br>';
+    checkboxes.innerHTML += '<div class="task" id=' + tasks[i].idItem + '> <button class="uncheckedButton" type="button">' +
+    '<i class="material-icons">check_box_outline_blank</i><p>' + tasks[i].description + '</p></button>' +
+    '<button class="erase"><i class="material-icons">close</i></button> </div>';
   }
 
-  listEl.innerHTML += '</div';
 
+  listEl.appendChild(checkboxes);
   listDiv.appendChild(listEl);
   section.appendChild(listDiv);
 
