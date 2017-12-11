@@ -1,69 +1,56 @@
-let addListForm = document.querySelector('.sideBar .form form');
-addListForm.addEventListener('submit', newList);
+let checkedButt = document.querySelectorAll('.checkedButton');
+for(let i = 0; i < checkedButt.length; i++)
+  checkedButt[i].onclick = uncheckB;
 
-function encodeForAjax(data) {
-  return Object.keys(data).map(function(k){
-    return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
-  }).join('&');
-}
+let uncheckedButt = document.querySelectorAll('.uncheckedButton');
+for(let i = 0; i < uncheckedButt.length; i++)
+  uncheckedButt[i].onclick = checkB;
 
-function newList(event) {
+function checkB(event){
   event.preventDefault();
+  sendReq(event, 1);
+}
 
-  let title = document.querySelector('#listAddDiv input[name=title]').value;
+function uncheckB(event){
+  event.preventDefault();
+  sendReq(event, 0);
+}
 
-  let id = 0;
-  let lists = document.getElementsByClassName('list');
+function sendReq(event, bool) {
+  let idTemp = (event.currentTarget).parentNode.id;
 
-  for(let i = 0; i < lists.length ; i++){
-    id = id <= Number(lists[i].id) ? Number(lists[i].id) : id;
-  }
+  let id = idTemp.substr(4, idTemp.length - 1);
 
-  let tasks = [];
-  let tasksDiv = document.querySelectorAll('#itemsAddList .todoItems');
-  for(let i = 0; i < tasksDiv.length; i++){
-    if(tasksDiv[i].value != '')
-      tasks.push(tasksDiv[i].value);
-  }
-
-  let tasksStr = tasks.join();
   let request = new XMLHttpRequest();
-  request.addEventListener('load', receiveLists);
-  request.open('POST', 'add_list.php', true);
+  request.addEventListener('load', receiveUpdated);
+  request.open('POST', 'update_task.php', true);
   request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-  request.send(encodeForAjax({title: title, id: id, tasks: tasksStr}));
+  request.send(encodeForAjax({id: id, bool: bool}));
 
 }
 
-function receiveLists(data){
-  let section = document.querySelector('#listsDiv');
+function receiveUpdated(data){
   let response = JSON.parse(this.responseText);
-  let list = response.list;
-  let tasks = response.tasks;
+  let idTemp = response.id;
 
-  let listDiv = document.createElement('div');
-  listDiv.classList.add('listDiv');
-  let listEl = document.createElement('div');
-  listEl.classList.add('list');
-  listEl.setAttribute('id',  list.idList );
-
-  listEl.innerHTML = '<div class="title"> <a>' + list.title +
-  '</a> </div> ';
+  let id = "task" + idTemp;
 
 
+  let elementParent = document.getElementById(id);
+  let bool = response.bool;
 
-  let checkboxes = document.createElement('div');
-  checkboxes.classList.add('checkboxes');
-  for(let i = 0; i < tasks.length ; i++){
-    checkboxes.innerHTML += '<div class="task" id=' + tasks[i].idItem + '> <button class="uncheckedButton" type="button">' +
-    '<i class="material-icons">check_box_outline_blank</i><p>' + tasks[i].description + '</p></button>' +
-    '<button class="erase"><i class="material-icons">close</i></button> </div>';
+  let element = elementParent.firstChild;
+
+  if(bool == 1){
+
+    element.setAttribute('class', 'checkedButton');
+    element.firstChild.innerHTML = 'check_box';
+    element.onclick = uncheckB;
+
+  }else if (bool == 0){
+
+    element.setAttribute('class', 'uncheckedButton');
+    element.firstChild.innerHTML = 'check_box_outline_blank';
+    element.onclick = checkB;
   }
-
-
-  listEl.appendChild(checkboxes);
-  listDiv.appendChild(listEl);
-  section.appendChild(listDiv);
-
-
 }

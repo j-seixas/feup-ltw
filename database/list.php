@@ -68,4 +68,10 @@
     $stmt->execute(array($id));
   }
 
+  function updateTask($id, $bool){
+    global $dbh;
+    $stmt = $dbh->prepare('UPDATE items SET complete = ? WHERE idItem = ?');
+    $stmt->execute(array($bool, $id));
+  }
+
 ?>
