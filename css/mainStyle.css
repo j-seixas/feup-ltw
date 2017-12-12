@@ -314,9 +314,10 @@ body > header > * > a {
 }
 
 .task {
-  border-bottom: 1px solid #1ABC9C;
-  border-top: 1px solid #1ABC9C;
+  border-bottom: 1px solid #2C3E50;
+  border-top: 1px solid #2C3E50;
   box-sizing: border-box;
+  padding-top: 3px;
 }
 
 .checkedButton, .uncheckedButton {
@@ -342,7 +343,7 @@ body > header > * > a {
   overflow: hidden;
 }
 
-.checkedButton i, .uncheckedButton i {
+.checkedButton i, .uncheckedButton i, .submitAddTask i {
   margin: 0;
   color: #1ABC9C;
   font-size: 32px;
@@ -388,6 +389,58 @@ body > header > * > a {
 .delete i {
   color: #E74C3C;
 }
+
+.addTaskFromList {
+  box-sizing: border-box;
+  width: 100%;
+  border-top: 2px solid #2C3E50;
+
+}
+
+.innerAddTask{
+  display:inline-flex;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.submitAddTask {
+  overflow: hidden;
+  padding: 0;
+
+  border: 0;
+  outline: 0;
+  background: #34495E;
+  width: 50px;
+
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 10px;
+  cursor: pointer;
+}
+
+.taskToAdd {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 15px;
+
+  width: 155px;
+  height: 36px;
+
+  box-sizing: border-box;
+  padding: 3%;
+  padding-left: 7%;
+  outline: 0;
+  border: 0;
+  border-radius: 20px;
+
+  background: #2C3E50;
+  color: #1ABC9C;
+}
+
+.taskToAdd:focus{
+  border: 1px solid #1ABC9C;
+}
+
 
 .task:hover .erase, .task:active .erase, .task:focus .erase,
 .list:hover .delete, .list:active .delete, .list:focus .delete {

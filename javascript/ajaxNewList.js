@@ -49,8 +49,8 @@ function receiveLists(data){
   listEl.classList.add('list');
   listEl.setAttribute('id',  list.idList );
 
-  listEl.innerHTML = '<div class="title"> <a>' + list.title +
-  '</a> </div> ';
+  listEl.innerHTML = '<div class="title"> <p>' + list.title +
+  '</p> <button class="delete"><i class="material-icons">delete</i></button></div> ';
 
 
 
@@ -64,6 +64,9 @@ function receiveLists(data){
 
 
   listEl.appendChild(checkboxes);
+  listEl.innerHTML += '<form class="addTaskFromList" method="post"> ' +
+      '<div class="innerAddTask"> <input type="text" class="taskToAdd" placeholder="Task" name="task">' +
+      '<button class="submitAddTask" type="submit"><i class="material-icons">add</i><p></p></button> </div> </form>';
   listDiv.appendChild(listEl);
   section.appendChild(listDiv);
 
@@ -75,4 +78,11 @@ function receiveLists(data){
   for(let i = 0; i < uncheckedButt.length; i++)
     uncheckedButt[i].onclick = checkB;
 
+  let deleteButton = document.querySelectorAll('.title .delete');
+  for(let i = 0; i < deleteButton.length; i++)
+    deleteButton[i].addEventListener('click', deleteList);
+
+  let addTask = document.querySelectorAll('.addTaskFromList');
+  for(let i = 0; i < addTask.length; i++)
+    addTask[i].addEventListener('submit', addTaskToList);
 }

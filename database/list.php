@@ -86,4 +86,14 @@
     $stmt->execute(array($bool, $id));
   }
 
+  function getTask($listID, $task){
+    global $dbh;
+    $stmt = $dbh->prepare("SELECT *
+                           FROM items
+                           WHERE idList = ? AND description = ?
+                           ORDER BY idItem DESC");
+    $stmt->execute(array($listID, $task));
+    return $stmt->fetch();
+  }
+
 ?>
