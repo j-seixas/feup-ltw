@@ -6,6 +6,9 @@ CREATE TABLE users (
 	userName VARCHAR PRIMARY KEY,
 	name VARCHAR,
 	birthDate DATE,
+	gender VARCHAR,
+	photoID INTEGER,
+	about VARCHAR,
 	password VARCHAR NOT NULL
 );
 
@@ -22,9 +25,9 @@ CREATE TABLE items (
 	description VARCHAR
 );
 
-INSERT INTO users VALUES ('1@1.com', '1', '01/01/1981', '356a192b7913b04c54574d18c28d46e6395428ab');
-INSERT INTO users VALUES ('2@2.com', '2', '02/02/1982', 'da4b9237bacccdf19c0760cab7aec4a8359010b0');
-INSERT INTO users VALUES ('123@reddit.com', 'Who Cares', '18/04/1990', '8cb2237d0679ca88db6464eac60da96345513964');
+INSERT INTO users VALUES ('1@1.com', '1', '01/01/1981', 'Male', 5, 'I like trains', '356a192b7913b04c54574d18c28d46e6395428ab');
+INSERT INTO users VALUES ('2@2.com', '2', '02/02/1982','Male', 6, 'I like trains 2', 'da4b9237bacccdf19c0760cab7aec4a8359010b0');
+INSERT INTO users VALUES ('123@reddit.com', 'Who Cares','18/04/1990','Male', 3, 'I like trains 3',  '8cb2237d0679ca88db6464eac60da96345513964');
 
 
 INSERT INTO lists VALUES (NULL, '1@1.com', 'Asfour Stah');

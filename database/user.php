@@ -34,9 +34,24 @@
   function getUserInfoByUserName($username,$info){
     if($info == 'password')
         return null;
-    global $dbh;
-    $statement = $dbh->prepare('SELECT * FROM users WHERE username = ? ');
-    $statement->execute(array($username));
+    global $db;
+    $statement = $db->prepare('SELECT * FROM users WHERE username = ? ');
+    $statement->execute([$username]);
     return $statement->fetch()[$info];
+}
+
+function uploadUserPhoto($username){
+  global $db;
+  $idPhoto = 'photo'.getUserInfoByUserName($username,'photoID').'.jpg';
+  $statement = $db->prepare('UPDATE users SET photoID = ? WHERE username = ?');
+  $statement->execute([$idPhoto,$username]);
+  return $statement->errorCode();
+}
+
+function getUserPhoto($username){
+  global $db;
+  $statement = $db->prepare('SELECT photoID FROM users WHERE username = ?');
+  $statement->execute([$username]);
+  return $statement->fetch()['photoID'];
 }
 ?>
