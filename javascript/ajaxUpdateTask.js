@@ -18,7 +18,7 @@ function uncheckB(event){
 }
 
 function sendReq(event, bool) {
-  let idTemp = (event.currentTarget).parentNode.id;
+  let idTemp = event.currentTarget.parentNode.id;
 
   let id = idTemp.substr(4, idTemp.length - 1);
 

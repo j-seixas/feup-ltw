@@ -4,7 +4,8 @@
     global $dbh;
     $stmt = $dbh->prepare("SELECT *
                            FROM lists
-                           WHERE userName = ?");
+                           WHERE userName = ?
+                           ORDER BY idList DESC");
     $stmt->execute(array($username));
     return $stmt->fetchAll();
   }

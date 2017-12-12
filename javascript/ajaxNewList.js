@@ -68,7 +68,7 @@ function receiveLists(data){
       '<div class="innerAddTask"> <input type="text" class="taskToAdd" placeholder="Task" name="task">' +
       '<button class="submitAddTask" type="submit"><i class="material-icons">add</i><p></p></button> </div> </form>';
   listDiv.appendChild(listEl);
-  section.appendChild(listDiv);
+  section.insertBefore(listDiv, section.childNodes[0]);
 
   let eraseButton = document.querySelectorAll('.checkboxes .task .erase');
   for(let i = 0; i < eraseButton.length; i++)
