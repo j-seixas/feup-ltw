@@ -341,6 +341,7 @@ body > header > * > a {
   margin-top: 8px;
   white-space: initial;
   overflow: hidden;
+  max-width: 105px;
 }
 
 .checkedButton i, .uncheckedButton i, .submitAddTask i {
@@ -349,6 +350,7 @@ body > header > * > a {
   font-size: 32px;
   height: 100%;
   width: 50px;
+  min-width: 50px;
   max-height: 36px;
   min-height: 36px;
   padding: 0;
