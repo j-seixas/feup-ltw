@@ -7,6 +7,8 @@ $username = $_SESSION['userName'];
 $fullName = getUserInfoByUserName($username, 'name');
 $birthDate = getUserInfoByUserName($username, 'birthDate');
 $photoUser = getUserInfoByUserName($username, 'photoID');
+$gender = getUserInfoByUserName($username, 'gender');
+$about = getUserInfoByUserName($username, 'about');
 $srcPhoto = 'resources/images/' . $photoUser;
 ?>
 <!DOCTYPE html>
@@ -25,6 +27,12 @@ $srcPhoto = 'resources/images/' . $photoUser;
     </div>
     <div id="birthDate">
         <a> Birth Date: <?php echo $birthDate;?></a>
+    </div>
+    <div id="gender">
+        <a> Gender: <?php echo $gender;?></a>
+    </div>
+    <div id="birthDate">
+        <a> About: <?php echo $about;?></a>
     </div>
     <img class="img-item" src="<?php echo $srcPhoto ?>"><br>
                 <form class="uploadPhotoProfile" action="database/uploadPhoto.php" method="post"
