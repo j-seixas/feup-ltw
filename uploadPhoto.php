@@ -1,6 +1,6 @@
 <?php
+include_once('includes/init.php');
 include_once('database/user.php');
-include_once('database/uploadPhoto.php');
 // If the user didn't come from a valid page.
 
 $id = getUserInfoByUserName($_SESSION['userName'],'userName');

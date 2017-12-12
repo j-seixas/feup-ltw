@@ -34,24 +34,24 @@
   function getUserInfoByUserName($username,$info){
     if($info == 'password')
         return null;
-    global $db;
-    $statement = $db->prepare('SELECT * FROM users WHERE username = ? ');
-    $statement->execute([$username]);
-    return $statement->fetch()[$info];
+    global $dbh;
+    $stmt = $dbh->prepare('SELECT * FROM users WHERE username = ? ');
+    $stmt->execute(array($username));
+    return $stmt->fetch()[$info];
 }
 
 function uploadUserPhoto($username){
-  global $db;
-  $idPhoto = 'photo'.getUserInfoByUserName($username,'photoID').'.jpg';
-  $statement = $db->prepare('UPDATE users SET photoID = ? WHERE username = ?');
-  $statement->execute([$idPhoto,$username]);
-  return $statement->errorCode();
+  global $dbh;
+  $idPhoto = 'photo'. getUserInfoByUserName($username,'photoID') . '.jpg';
+  $stmt = $dbh->prepare('UPDATE users SET photoID = ? WHERE username = ?');
+  $stmt->execute(array($idPhoto,$username));
+  return $stmt->errorCode();
 }
 
 function getUserPhoto($username){
-  global $db;
-  $statement = $db->prepare('SELECT photoID FROM users WHERE username = ?');
-  $statement->execute([$username]);
-  return $statement->fetch()['photoID'];
+  global $dbh;
+  $stmt = $dbh->prepare('SELECT photoID FROM users WHERE username = ?');
+  $stmt->execute(array($username));
+  return $stmt->fetch()['photoID'];
 }
 ?>

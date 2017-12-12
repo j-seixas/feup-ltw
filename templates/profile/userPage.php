@@ -1,6 +1,5 @@
 <?php
-session_start();
-$db = new PDO('sqlite:database/todolist.db'); 
+
 include_once('database/user.php');
 
 $username = $_SESSION['userName'];
@@ -9,7 +8,7 @@ $birthDate = getUserInfoByUserName($username, 'birthDate');
 $photoUser = getUserInfoByUserName($username, 'photoID');
 $gender = getUserInfoByUserName($username, 'gender');
 $about = getUserInfoByUserName($username, 'about');
-$srcPhoto = 'resources/images/' . $photoUser;
+$srcPhoto = 'resources/images/photo' . $username . '.jpg';//$photoUser;
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,7 +34,7 @@ $srcPhoto = 'resources/images/' . $photoUser;
         <a> About: <?php echo $about;?></a>
     </div>
     <img class="img-item" src="<?php echo $srcPhoto ?>"><br>
-                <form class="uploadPhotoProfile" action="database/uploadPhoto.php" method="post"
+                <form class="uploadPhotoProfile" action="uploadPhoto.php" method="post"
                       enctype="multipart/form-data">
                     <input type="file" name="fileToUpload" id="fileToUpload" value="Select image to upload:"><br>
                     <input type="submit" value="Upload Image" name="submit">
