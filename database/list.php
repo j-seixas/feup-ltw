@@ -45,6 +45,12 @@
     $stmt->execute(array($username, $title));
   }
 
+  function eraseList($id){
+    global $dbh;
+    $stmt = $dbh->prepare('DELETE FROM lists WHERE idList = ?');
+    $stmt->execute(array($id));
+  }
+
     /***** TASKS *****/
 
   function addTask($listID, $task){
@@ -66,6 +72,12 @@
     global $dbh;
     $stmt = $dbh->prepare('DELETE FROM items WHERE idItem = ?');
     $stmt->execute(array($id));
+  }
+
+  function eraseAllTasks($idList){
+    global $dbh;
+    $stmt = $dbh->prepare('DELETE FROM items WHERE idList = ?');
+    $stmt->execute(array($idList));
   }
 
   function updateTask($id, $bool){

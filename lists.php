@@ -10,7 +10,7 @@ include_once('database/list.php');
 
     echo '<div class="list" id=' . $list['idList'] . '>
     <div class="title">
-    <a>' . $list['title'] . '</a>
+    <p>' . $list['title'] . '</p> <button class="delete"><i class="material-icons">delete</i></button>
     </div>';
     echo '<div class="checkboxes">';
     $_SESSION['items'] = getAllItems($list['idList']);

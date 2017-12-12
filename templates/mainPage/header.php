@@ -13,6 +13,7 @@
     <script src="javascript/ajaxNewList.js" defer></script>
     <script src="javascript/ajaxRemoveTask.js" defer></script>
     <script src="javascript/ajaxUpdateTask.js" defer></script>
+    <script src="javascript/ajaxRemoveList.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 

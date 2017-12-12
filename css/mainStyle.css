@@ -284,26 +284,51 @@ body > header > * > a {
   padding-bottom: 5px;
   padding-left: 5px;
   border-bottom: 2px solid #2C3E50;
+  display:inline-flex;
+  align-items: center;
+}
+
+.title p {
+  margin: 0;
+  border: 0;
+  outline: 0;
+  background: #34495E;
+  width: 150px;
+  text-align: left;
 }
 
 .checkboxes {
-  padding-top: 7px;
+  padding-top: 5px;
 }
 .checkboxes label > input{
   padding-top: 20px;
 }
 
+
+.checkboxes :first-child {
+    border-top: 0;
+}
+
+.checkboxes :last-child {
+    border-bottom: 0;
+}
+
+.task {
+  border-bottom: 1px solid #1ABC9C;
+  border-top: 1px solid #1ABC9C;
+  box-sizing: border-box;
+}
+
 .checkedButton, .uncheckedButton {
   border: 0;
   outline: 0;
-  background: #34495E;
   cursor: pointer;
+  background: #34495E;
   font-size: 16px;
   width: 155px;
   text-align: center;
   display:inline-flex;
   align-items: center;
-
 }
 
 .checkedButton p, .uncheckedButton p {
@@ -329,7 +354,7 @@ body > header > * > a {
 
 }
 
-.erase {
+.erase, .delete {
   visibility: hidden;
   border: 0;
   outline: 0;
@@ -339,29 +364,42 @@ body > header > * > a {
   text-align: center;
   display:inline-flex;
   align-items: center;
-
+  padding-left: 0;
+  padding-right: 0;
 }
 
-.erase i {
+.erase i, .delete i {
   margin: 0;
-  color: #1ABC9C;
   font-size: 32px;
   height: 100%;
   width: 50px;
   max-height: 36px;
   min-height: 36px;
   padding: 0;
-  transform: rotate(25deg);
-
+  -ms-transform: translate(-6px, 0);
+  -webkit-transform: translate(-6px, 0);
+  transform: translate(-6px, 0);
 }
 
-.task:hover .erase, .task:active .erase, .task:focus .erase {
+.erase i {
+  color: #1ABC9C;
+}
+
+.delete i {
+  color: #E74C3C;
+}
+
+.task:hover .erase, .task:active .erase, .task:focus .erase,
+.list:hover .delete, .list:active .delete, .list:focus .delete {
   visibility: visible;
 
 }
 
-.task:hover .erase i, .task:active .erase i, .task:focus .erase i {
-  transform: rotate(0deg);
+.task:hover .erase i, .task:active .erase i, .task:focus .erase i,
+.list:hover .delete i, .list:active .delete i, .list:focus .delete i {
+  -ms-transform: translate(0px, 0);
+  -webkit-transform: translate(0px, 0);
+  transform: translate(0px, 0);
   transition: transform .5s;
 
 }
