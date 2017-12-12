@@ -463,3 +463,35 @@ body > header > * > a {
 
   background: #2C3E50;
 }
+
+#userInfo{
+  padding: 3%;
+}
+#userInfo div{
+  font-family: 'Roboto Condensed', sans-serif;
+  outline: 0;
+  width: 100%;
+  background: #2C3E50;
+  color: rgb(255, 255, 255);
+  border-radius: 20px;
+  border: 0;
+  box-sizing: border-box;
+  margin: 0 0 15px;
+  padding: 2%;
+  padding-left: 7%;
+  font-size: 15px;
+}
+
+#userInfo a{
+
+    border-radius: 45px;
+    border: 3px solid rgb(255, 255, 255);
+    padding: 20px; 
+    width: 200px;
+    height: 150px; 
+
+}
+#userInfo a:hover,
+#userInfo a:active, #userInfo a:focus {
+  background: #1ABC9C;
+}
