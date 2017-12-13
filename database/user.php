@@ -2,9 +2,13 @@
 
   function signInCorrect($username, $password) {
     global $dbh;
-    $stmt = $dbh->prepare('SELECT * FROM users WHERE userName = ? AND password = ?');
-    $stmt->execute(array($username, sha1($password)));
-    return $stmt->fetch() !== false;
+    $stmt = $dbh->prepare('SELECT * FROM users WHERE userName = ?');
+    $stmt->execute(array($username));
+    $user = $stmt->fetch();
+    if ($user !== false && password_verify($password, $user['password'])) {
+      return true;
+    }
+    return false;
   }
 
   function dontExist($username){
@@ -16,8 +20,9 @@
 
   function registUser($name, $username, $date, $password){
     global $dbh;
-    $stmt = $dbh->prepare('INSERT INTO users VALUES (?, ?, ?, ?)');
-    $stmt->execute(array($name, $username, $date, sha1($password)));
+    $options = ['cost' => 12];
+    $stmt = $dbh->prepare('INSERT INTO users VALUES (?, ?, ?, NULL, ?)');
+    $stmt->execute(array($name, $username, $date, password_hash($password, PASSWORD_DEFAULT, $options)));
 
   }
 

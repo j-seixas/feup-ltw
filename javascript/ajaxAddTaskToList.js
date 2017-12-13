@@ -9,8 +9,6 @@ function addTaskToList(event) {
   let id = parentNode.id;
 
   let task = parentNode.getElementsByTagName('form')[0].querySelector('.innerAddTask .taskToAdd').value;
-  console.log(task);
-  console.log(id);
 
   let request = new XMLHttpRequest();
   request.addEventListener('load', receiveTaskOfList);
@@ -21,7 +19,6 @@ function addTaskToList(event) {
 }
 
 function receiveTaskOfList(data){
-  console.log(this.response);
   let response = JSON.parse(this.responseText);
   let id = response.id;
   let task= response.task;

@@ -23,9 +23,9 @@ CREATE TABLE items (
 	description VARCHAR
 );
 
-INSERT INTO users VALUES ('1@1.com', '1', '01/01/1981', 'I like trains', '356a192b7913b04c54574d18c28d46e6395428ab');
-INSERT INTO users VALUES ('2@2.com', '2', '02/02/1982', 'I like trains 2', 'da4b9237bacccdf19c0760cab7aec4a8359010b0');
-INSERT INTO users VALUES ('123@reddit.com', 'Who Cares','18/04/1990', 'I like trains 3',  '8cb2237d0679ca88db6464eac60da96345513964');
+INSERT INTO users VALUES ('1@1.com', '1', '1981-01-01', 'I like trains', '$2a$12$kH7F0mXLJz2U3.FWI5FIOe3M5yII7sigGfjVE8dZhvVDBfI1MHXT.');
+INSERT INTO users VALUES ('2@2.com', '2', '1982-02-02', 'I like trains 2', '$2a$12$onQj9tTdinD2kmpd89BlVugtOH4Z0N4tviY/mdDWnM2s0at9BM7Iu');
+INSERT INTO users VALUES ('123@reddit.com', 'Who Cares', '1990-04-18', 'I like trains 3',  '$2a$12$CMHljy4KuV7UWbTVhzz7bObt8Tx7blx2SmzVBVEoEov2x7TNRSamG');
 
 
 INSERT INTO lists VALUES (NULL, '1@1.com', 'Asfour Stah');
