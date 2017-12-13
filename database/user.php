@@ -42,6 +42,12 @@
     $stmt = $dbh->prepare('SELECT * FROM users WHERE username = ? ');
     $stmt->execute(array($username));
     return $stmt->fetch()[$info];
-}
+  }
+
+  function changeAbout($username, $about){
+    global $dbh;
+    $stmt = $dbh->prepare('UPDATE users SET about = ? WHERE userName = ?');
+    $stmt->execute(array($about, $username));
+  }
 
 ?>

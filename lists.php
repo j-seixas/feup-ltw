@@ -34,7 +34,7 @@ include_once('database/list.php');
     echo '<form class="addTaskFromList" method="post">
           <div class="innerAddTask">
               <input type="text" class="taskToAdd" placeholder="Task" name="task">
-              <button class="submitAddTask" type="submit"><i class="material-icons">add</i><p></p></button>
+              <button class="submitAddTask" type="submit"><i class="material-icons">add</i></button>
             </div> </form>';
     echo '</div></div>';
   }

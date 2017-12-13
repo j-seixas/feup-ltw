@@ -66,7 +66,7 @@ function receiveLists(data){
   listEl.appendChild(checkboxes);
   listEl.innerHTML += '<form class="addTaskFromList" method="post"> ' +
       '<div class="innerAddTask"> <input type="text" class="taskToAdd" placeholder="Task" name="task">' +
-      '<button class="submitAddTask" type="submit"><i class="material-icons">add</i><p></p></button> </div> </form>';
+      '<button class="submitAddTask" type="submit"><i class="material-icons">add</i></button> </div> </form>';
   listDiv.appendChild(listEl);
   section.insertBefore(listDiv, section.childNodes[0]);
 

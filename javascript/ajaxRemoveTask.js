@@ -5,7 +5,7 @@ for(let i = 0; i < eraseButton.length; i++)
 function eraseTask(event) {
   event.preventDefault();
 
-  let idTemp = (event.currentTarget).parentNode.id;
+  let idTemp = event.currentTarget.parentNode.id;
 
   let id = idTemp.substr(4, idTemp.length - 1);
 
