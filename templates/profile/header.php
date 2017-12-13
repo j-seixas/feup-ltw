@@ -6,7 +6,7 @@
   $photoUser = getUserInfoByUserName($_SESSION['userName'], 'photoID');
   $gender = getUserInfoByUserName($_SESSION['userName'], 'gender');
   $about = getUserInfoByUserName($_SESSION['userName'], 'about');
-  $srcPhoto = 'resources/images/userPhotos/thumbs_medium' . $_SESSION['userName'] . '.jpg';//$photoUser;
+  $srcPhoto = 'resources/images/userPhotos/thumbs_medium/photo' . $_SESSION['userName'] . '.jpg';//$photoUser;
 ?>
 
 <!DOCTYPE html>
@@ -15,6 +15,7 @@
       <title>To-Do Master</title>
       <meta charset="utf-8">
       <link rel="stylesheet" href="css/mainStyle.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
     <body>
       <header>

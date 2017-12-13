@@ -1,5 +1,4 @@
 <?php
-  phpinfo();
   include_once('includes/init.php');
   include_once('database/user.php');
 
@@ -8,11 +7,11 @@
   $target_dir = "resources/images/userPhotos/";
 
   // Generate filenames for original and medium files
-  $originalFileName = $target_dir . "originals/" . $photo_name;
+  $originalFileName = $target_dir . "original/" . $photo_name;
   $mediumFileName = $target_dir . "thumbs_medium/" . $photo_name;
 
   $uploadOk = 1;
-  $imageFileType = pathinfo($target_dir . "originals/" . basename($_FILES["fileToUpload"]["name"]) ,PATHINFO_EXTENSION);
+  $imageFileType = pathinfo($target_dir . "original/" . basename($_FILES["fileToUpload"]["name"]) ,PATHINFO_EXTENSION);
 
   // Check if image file is a actual image or fake image
   if(isset($_POST["submit"])) {
@@ -22,10 +21,6 @@
     } else {
         $uploadOk = 0;
     }
-  }
-  // Check if file already exists
-  if (file_exists($originalFileName)) {
-    $uploadOk = 0;
   }
 
   // Check file size
@@ -60,12 +55,12 @@
     $height = imagesy($original);    // height of the original image
     $square = min($width, $height);  // size length of the maximum square
 
-    // Calculate width and height of medium sized image (max width: 400)
-    $mediumwidth = $width;
-    $mediumheight = $height;
+    // Calculate width and height of medium sized image (max width: 300)
+    $mediumwidth = $square;
+    $mediumheight = $square;
     if ($mediumwidth > 300) {
       $mediumwidth = 300;
-      $mediumheight = $mediumheight * ( $mediumwidth / $width );
+      $mediumheight = 300;
     }
 
     // Create and save a medium image
@@ -75,6 +70,5 @@
 
   }
 
-  uploadUserPhoto($_SESSION['userName']);
   header('Location: profile.php');
 ?>

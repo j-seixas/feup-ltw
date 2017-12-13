@@ -21,7 +21,6 @@
 
   }
 
-
   function UserGetInfo($username) {
     global $dbh;
     $stmt = $dbh->prepare("SELECT *
@@ -40,18 +39,4 @@
     return $stmt->fetch()[$info];
 }
 
-function uploadUserPhoto($username){
-  global $dbh;
-  $idPhoto = 'photo'. getUserInfoByUserName($username,'photoID') . '.jpg';
-  $stmt = $dbh->prepare('UPDATE users SET photoID = ? WHERE username = ?');
-  $stmt->execute(array($idPhoto,$username));
-  return $stmt->errorCode();
-}
-
-function getUserPhoto($username){
-  global $dbh;
-  $stmt = $dbh->prepare('SELECT photoID FROM users WHERE username = ?');
-  $stmt->execute(array($username));
-  return $stmt->fetch()['photoID'];
-}
 ?>
