@@ -1,6 +1,6 @@
 <div id="signup">
   <div class="form">
-    <form name="registerForm" action="checkRegister.php" method="post" onSubmit="return submitList()">
+    <form name="registerForm" action="checkRegister.php" method="post">
       <div id="register">
         <input type="email" placeholder="Email" name="userName" required><br>
         <input type="text" placeholder="Name" name="name" required><br>
@@ -16,17 +16,4 @@
       </div>
     </form>
   </div>
-  <script>
-  function submitList(){
-    console.log("submiting");
-
-    if(document.forms["registerForm"]["password"].value == document.forms["registerForm"]["cpassword"].value )
-    console.log("here");
-    else {
-      console.log("dif");
-      return false;
-    }
-    return true;
-  }
-  </script>
 </div>

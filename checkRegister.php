@@ -5,11 +5,11 @@ include_once('database/user.php');
 $userName = $_POST['userName'];
 
 if( !dontExist($userName)){
-  $_SESSION['errorR']='Email already in use!';
+  $_SESSION['errorR'] = 'Email already in use!';
   header('Location: ' . $_SERVER['HTTP_REFERER']);
-  
+
 } else if( $_POST['password'] != $_POST['cpassword'] ) {
-  $_SESSION['errorR']="Passwords don't matcht!";
+  $_SESSION['errorR'] = "Passwords don't matcht!";
   header('Location: ' . $_SERVER['HTTP_REFERER']);
 
 } else {
