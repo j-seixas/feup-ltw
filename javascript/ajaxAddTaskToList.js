@@ -9,7 +9,8 @@ function addTaskToList(event) {
   let id = parentNode.id;
 
   let task = parentNode.getElementsByTagName('form')[0].querySelector('.innerAddTask .taskToAdd').value;
-
+  parentNode.getElementsByTagName('form')[0].querySelector('.innerAddTask .taskToAdd').value = '';
+  
   let request = new XMLHttpRequest();
   request.addEventListener('load', receiveTaskOfList);
   request.open('POST', 'add_task_to_list.php', true);

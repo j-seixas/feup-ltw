@@ -4,14 +4,19 @@
 
   $title = $_POST['title'];
   $id = $_POST['id'];
-  $tasks = explode(',', $_POST['tasks']);
   $userName = $_SESSION['userName'];
 
   addList($userName,$title);
   $list = getListAfterID($id, $userName);
 
-  foreach ($tasks as $task) {
-    addTask($list['idList'], $task);
+  if($_POST['tasks'] != ''){
+
+    $tasks = explode(',', $_POST['tasks']);
+
+
+    foreach ($tasks as $task) {
+      addTask($list['idList'], $task);
+    }
   }
 
   $items = getAllItems($list['idList']);

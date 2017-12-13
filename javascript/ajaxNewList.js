@@ -26,14 +26,18 @@ function newList(event) {
       tasks.push(tasksDiv[i].value);
   }
 
-  let tasksStr = tasks.join();
+  let tasksStr;
+  if(tasks.length > 0)
+    tasksStr = tasks.join();
+  else
+    tasksStr = '';
   let request = new XMLHttpRequest();
   request.addEventListener('load', receiveLists);
   request.open('POST', 'add_list.php', true);
   request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   request.send(encodeForAjax({title: title, id: id, tasks: tasksStr}));
 
-  //resetButton(); TODO
+  resetButton();
 
 }
 
