@@ -1,4 +1,7 @@
 <div id="signup">
+  <?php if(isset($_SESSION['errorR']) && $_SESSION['errorR']!=''){
+    echo "<script type='text/javascript'>alert('" . $_SESSION['errorR']  ."');</script>";
+    $_SESSION['errorR']='';}?>
   <div class="form">
     <form name="registerForm" action="checkRegister.php" method="post">
       <div id="register">
