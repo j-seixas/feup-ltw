@@ -44,6 +44,7 @@ function newList(event) {
 function receiveLists(data){
   let section = document.querySelector('#listsDiv');
   let response = JSON.parse(this.responseText);
+  if(response instanceof Array){
   let list = response.list;
   let tasks = response.tasks;
 
@@ -89,4 +90,8 @@ function receiveLists(data){
   let addTask = document.querySelectorAll('.addTaskFromList');
   for(let i = 0; i < addTask.length; i++)
     addTask[i].addEventListener('submit', addTaskToList);
+
+  } else {
+    alert(response);
+  }
 }

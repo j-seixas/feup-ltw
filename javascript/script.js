@@ -24,6 +24,8 @@ document.getElementById("add").onclick = function(){
     setTimeout(function(){
       document.getElementById("sideBarAdd").parentNode.removeChild(element);
       setAddTask();
+      let addListForm = document.querySelector('.sideBar .form form');
+      addListForm.addEventListener('submit', newList);
     },550);
 
   }else{
