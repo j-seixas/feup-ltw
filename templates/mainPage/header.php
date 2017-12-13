@@ -24,9 +24,6 @@
         <button id="add" class="buttonIcons" type="button"><i class="material-icons">note_add</i></button>
       </span>
 
-      <span class="buttonsLeft">
-        <button id="edit" class="buttonIcons" type="button"><i class="material-icons">mode_edit</i></button>
-      </span>
       <span class="buttonsRight">
         <button id="logout" class="buttonIcons" type="button"><i class="material-icons">exit_to_app</i></button>
 
@@ -36,9 +33,6 @@
           <i class="material-icons">account_circle</i>
         </button>
 
-      </span>
-      <span class="buttonsRight">
-        <button id="lists" class="buttonIcons" type="button"><i class="material-icons">assignment</i></button>
       </span>
 
     </header>

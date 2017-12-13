@@ -13,16 +13,8 @@ document.getElementById("add").onclick = function(){
   }
 }
 
-document.getElementById("edit").onclick = function(){
-  location.href = "index.php";
-}
-
 document.getElementById("profile").onclick = function(){
   location.href = "profile.php";
-}
-
-document.getElementById("lists").onclick = function(){
-  location.href = "lists.php";
 }
 
 document.getElementById("addTask").onclick = function(){
