@@ -6,7 +6,16 @@
   $id = $_POST['id'];
   $userName = $_SESSION['userName'];
 
-  addList($userName,$title);
+  if(preg_match('/[^\w!?" "]/', $title)) {
+    $addListTitleError = "Your title cannot contain the symbols, you entered " . $title;
+    $title = "";
+    echo $addListTitleError;
+  }
+  else{
+    addList($userName,$title);
+  }
+
+
   $list = getListAfterID($id, $userName);
 
   if($_POST['tasks'] != ''){
@@ -15,7 +24,14 @@
 
 
     foreach ($tasks as $task) {
+          if(preg_match('/[^\w!?" "]/', $task)) {
+      $addTaskError = "Your task cannot contain the symbols, you entered " . $title;
+      $task = "";
+      echo $addTaskError;
+    }
+    else{
       addTask($list['idList'], $task);
+    }
     }
   }
 
