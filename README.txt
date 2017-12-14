@@ -15,4 +15,4 @@ Password - Qwerty12345!
 
 External libraries:
 Google fonts - Used for most of the fonts on the project
-Material.io - Used for the navigation b
+Material.io - Used for the navigation bar icons and button icons
