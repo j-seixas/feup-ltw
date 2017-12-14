@@ -22,7 +22,7 @@
     global $dbh;
     $options = ['cost' => 12];
     $stmt = $dbh->prepare('INSERT INTO users VALUES (?, ?, ?, NULL, ?)');
-    $stmt->execute(array($name, $username, $date, password_hash($password, PASSWORD_DEFAULT, $options)));
+    $stmt->execute(array($username, $name, $date, password_hash($password, PASSWORD_DEFAULT, $options)));
 
   }
 

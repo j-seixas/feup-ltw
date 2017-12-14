@@ -11,7 +11,7 @@ let register = document.querySelector('#signup .form form');
 register.addEventListener('submit', validRegister, false);
 
 function validUsername() {
-  if (!/^[a-zA-Z.@0-9].{3,}$)/.test(this.value))
+  if (!/^[a-zA-Z.@-_0-9].{3,}$/.test(this.value))
     this.classList.add('red');
   else
     this.classList.remove('red');

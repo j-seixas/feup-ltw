@@ -25,9 +25,9 @@
     registUser($_POST['name'], $userName, $_POST['date'], $_POST['password']);
     if (signInCorrect($userName, $_POST['password'])) {
       setUser($userName);
-      if(isset($_SESSION['errorR']))
-      unset($_SESSION['errorR']);
     }
+    if(isset($_SESSION['errorR']))
+    unset($_SESSION['errorR']);
 
     header('Location: index.php');
   }

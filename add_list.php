@@ -6,34 +6,22 @@
   $id = $_POST['id'];
   $userName = $_SESSION['userName'];
 
-  if(preg_match('/[^\w!?" "]/', $title)) {
-    $addListTitleError = "Your title cannot contain the symbols, you entered '" . $title . "'";
-    $title = "";
-    echo json_encode($addListTitleError);
 
-  }else{
-    addList($userName,$title);
+  addList($userName,$title);
 
-    $list = getListAfterID($id, $userName);
+  $list = getListAfterID($id, $userName);
 
-    if($_POST['tasks'] != ''){
+  if($_POST['tasks'] != ''){
 
-      $tasks = explode(',', $_POST['tasks']);
+    $tasks = explode(',', $_POST['tasks']);
 
+    foreach ($tasks as $task)
+      addTask($list['idList'], $task);
 
-      foreach ($tasks as $task) {
-        if(preg_match('/[^\w!?" "]/', $task)) {
-          $addTaskError = "Your task cannot contain the symbols, you entered '" . $title . "'";
-          $task = "";
-          echo json_encode($addTaskError);
-        } else {
-          addTask($list['idList'], $task);
-        }
-      }
-    }
-
-    $items = getAllItems($list['idList']);
-    $var = array('list' => $list, 'tasks' => $items);
-    echo json_encode($var);
   }
+
+
+  $items = getAllItems($list['idList']);
+  $var = array('list' => $list, 'tasks' => $items);
+  echo json_encode($var);
 ?>

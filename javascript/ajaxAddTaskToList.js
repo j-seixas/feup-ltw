@@ -21,26 +21,23 @@ function addTaskToList(event) {
 
 function receiveTaskOfList(data){
   let response = JSON.parse(this.responseText);
-  if(response instanceof Array){
-    let id = response.id;
-    let task= response.task;
+  let id = response.id;
+  let task= response.task;
 
-    document.getElementById(id).getElementsByClassName('checkboxes')[0].innerHTML +='<div class="task" id="task' + task.idItem + '"> <button class="uncheckedButton" type="button">' +
-    '<i class="material-icons">check_box_outline_blank</i><p>' + task.description + '</p></button>' +
-    '<button class="erase"><i class="material-icons">close</i></button> </div>';
+  document.getElementById(id).getElementsByClassName('checkboxes')[0].innerHTML +='<div class="task" id="task' + task.idItem + '"> <button class="uncheckedButton" type="button">' +
+  '<i class="material-icons">check_box_outline_blank</i><p>' + task.description + '</p></button>' +
+  '<button class="erase"><i class="material-icons">close</i></button> </div>';
 
-    let eraseButton = document.querySelectorAll('.checkboxes .task .erase');
-    for(let i = 0; i < eraseButton.length; i++)
-      eraseButton[i].addEventListener('click', eraseTask);
+  let eraseButton = document.querySelectorAll('.checkboxes .task .erase');
+  for(let i = 0; i < eraseButton.length; i++)
+    eraseButton[i].addEventListener('click', eraseTask);
 
-    let uncheckedButt = document.querySelectorAll('.checkboxes .task .uncheckedButton');
-    for(let i = 0; i < uncheckedButt.length; i++)
-      uncheckedButt[i].onclick = checkB;
+  let uncheckedButt = document.querySelectorAll('.checkboxes .task .uncheckedButton');
+  for(let i = 0; i < uncheckedButt.length; i++)
+    uncheckedButt[i].onclick = checkB;
 
-    let checkedButt = document.querySelectorAll('.checkboxes .task .checkedButton');
-    for(let i = 0; i < checkedButt.length; i++)
-      checkedButt[i].onclick = uncheckB;
-  } else {
-    alert(response);
-  }
+  let checkedButt = document.querySelectorAll('.checkboxes .task .checkedButton');
+  for(let i = 0; i < checkedButt.length; i++)
+    checkedButt[i].onclick = uncheckB;
+
 }
