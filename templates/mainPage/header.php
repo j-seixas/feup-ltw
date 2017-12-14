@@ -5,8 +5,6 @@
     <title>To-Do Master</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/mainStyle.css">
-    <link rel="stylesheet" href="resources/fonts/S_Hand.ttf" />
-    <link rel="stylesheet" href="resources/fonts/The_Blacklist.ttf" />
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="javascript/script.js" defer></script>
